@@ -1,0 +1,33 @@
+A simple Git practice project plan today. 
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "web" {
+    count = var.instance_count
+    ami = var.ami
+    instance_type = var.instance_type
+    tags = {
+        name = var.tags
+    }
+}
+
+variable "ami" {
+    type = string
+    default = ""
+}
+
+variable "instance_type" {
+    type = string
+    default = "t2.micro"
+}
+
+variable "tags" {
+    type = string
+    default = ""
+}
+variable "instance_count" {
+    type = number
+    default ="2"
+}
