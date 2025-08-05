@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
 
 variable "ami" {
     type = string
-    default = ""
+    default = "0f918f7e67a3323f0"
 }
 
 variable "instance_type" {
